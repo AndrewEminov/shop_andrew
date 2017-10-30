@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="header">
+      <div class="header__container">
+        <div class="header__top">
+          <div class="number">
+            <img class="number__img" src="img/the_shop_logo.svg" alt="">
+          </div>
+          <div class="lable">
+            <img class="lable__img" src="img/oggetto_logo.svg" alt="">
+          </div>
+          <p class="contact">
+            +7(812) 2<span>.</span>12<span>.</span>85<span>.</span>06
+          </p>
+        </div>
+        <div class="header__bottom">
+          <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
+            <ul class="menu">
+              <% menu.forEach(function(item) { %>
+                <li class="menu__link">
+                  <a href="#"><%= item %></a>
+                </li>
+              <% }); %>
+            </ul>
+          <form class="form-for-search" action="index.html" method="post">
+            <input class="form-for-search__search" type="search" name="" value="">
+            <input class="form-for-search__submit" type="submit" name="" value="">
+          </form>
+        </div>
+      </div>
+  </header>
+  <div class="content">
+    <div class="content__container">
+      <div class="block-img">
+        <ul class="block-img__product-url">
+          <% const url = ['lisp', 'Одежда', 'Футболки'] %>
+          <% let sleshI = 0 %>
+          <% url.forEach(function(item) {%>
+            <li class="link-url">
+              <a href="#"><%= item %></a>
+            </li>
+            <%if(sleshI < url.length-1) {%>
+              <span class="slesh">&frasl;</span>
+            <%}%>
+            <%sleshI++%>
+          <% }); %>
+        </ul>
+        <div class="block-img__clothers">
+          <img class="img img-js" src="img/tshirts/tshirt_white.jpg" alt="">
+        </div>
+      </div>
+      <div class="block-description">
+        <h1 class="block-description__header-info">Футболка Alien technology</h1>
+        <p class="block-description__paragraph-info">
+          Состав: 100% хлопок, динамическая типизация, польская нотация.
+          Производство: Россия.
+        </p>
+        <form class="block-description__form-for-description form-js" action="index.html" method="post">
+          <h1 class="price">
+            1500&#x584
+          </h1>
+          <p class="paragraph-info">Размер:</p>
+          <div class="radio">
+            <%const size = ['s', 'm', 'l']%>
+            <%size.forEach(function(item){%>
+                <input type="radio" id="click" value=""><label for="click"><%=item%></label>
+            <%});%>
+          </div>
+
+          <p class="paragraph-info">Цвет:</p>
+          <div class="radio radio-js">
+            <input type="radio" id="click1" data-img="white"><label class="white" for="click1"></label>
+            <input type="radio" id="click2" data-img="yellow"><label class="yellow" for="click2"></label>
+            <input type="radio" id="click3" data-img="green"><label class="green" for="click3"></label>
+          </div>
+
+          <button class="button" type="button" name="button">
+            <p class="button__text">Купить</p>
+          </button>
+        </form>
+        <div class="like">
+          <div class="like__icon">
+            <img class="img" src="img/heart-icon.png" alt="">
+          </div>
+          <a href="#" class="like__text">Отложить на потом</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer__container">
+    <div class="footer__top">
+      <div class="menu-details">
+        <div class="menu-details__column-names">
+          <% const columnNames = ['Сервис и поддержка', 'О компании'] %>
+          <% columnNames.forEach(function(item) {%>
+            <p class="name"><%=item %></p>
+          <%});%>
+        </div>
+        <div class="menu-details__block-for-links">
+          <% const
+          submenu = [['Как сделать заказ','Возврат товара','Публичная оферта','Доставка'],
+                     ['Спопобы оплаты','Правила продажи','Возврат денежных средств','Вопросы и ответы'],
+                     ['О нас','Контакты','Вакансии','Партнерам'],
+                     ['Сертификаты','Преимущества','Наши скидки','']]%>
+          <% for(let i = 0; i < 4; i++){%>
+            <ul class="submenu">
+              <% for(let j = 0; j < 4; j++){%>
+                <li class="submenu__link">
+                  <a href="#"><%=submenu[i][j]%></a>
+                </li>
+              <%}%>
+            </ul>
+          <%}%>
+        </div>
+      </div>
+      <div class="additional-details">
+        <ul class="additional-details__menu">
+          <li class="link link--1">бесплатная доставка от 4000&#x584</li>
+          <li class="link link--2">Пробники в подарок при каждой покупке</li>
+          <li class="link link--3">Акции и подарки за покупку</li>
+        </ul>
+        <div class="additional-details__menu-icons">
+          <div class="icon-link icon-link--1">
+            <a href="#"><img src="img/icons/facebook.svg" alt=""></a>
+          </div>
+          <div class="icon-link icon-link--2"><a href="#">
+            <img src="img/icons/twitter.svg" alt=""></a>
+          </div>
+          <div class="icon-link icon-link--3"><a href="#">
+            <img src="img/icons/instagram.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="info">
+        2005-2017&copy 7h35h0p.ru &#8212 модный интернет-магазин
+        одежды, обуви, аксессуаров.
+      </p>
+      <p class="info">
+        Все права защищены. Доставка по всей России.
+      </p>
+    </div>
+  </div>
+  </footer>
+<body>
+</body>
+<script src="js/scripts.js"></script>
+</body>
+</html>
