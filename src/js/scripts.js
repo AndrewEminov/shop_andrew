@@ -4,14 +4,12 @@ const tshirt = document.querySelector('.img-js');
 let selectedLi;
 
 switchBlocks.addEventListener('click', function(event) {
-    let target = event.target;
-    while (target != this) {
-        if (target.tagName == 'LABEL' || target.tagName == target.textContent) {
-            border(target);
-            return;
-        }
-        target = target.parentNode;
-    }
+    const target = event.target;
+
+    if (target.tagName != 'LABEL') return;
+
+    border(target);
+
 });
 
 function border(node) {
