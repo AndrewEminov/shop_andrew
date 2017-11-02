@@ -7,7 +7,6 @@ switchBlocks.addEventListener('click', function(event) {
     const target = event.target;
 
     if (target.tagName != 'LABEL') return;
-
     border(target);
 
 });

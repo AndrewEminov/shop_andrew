@@ -6,7 +6,10 @@ const rename       = require('gulp-rename');
 const ejs          = require('gulp-ejs');
 const gutil        = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
+const imagemin = require('gulp-imagemin');
+const gulpIf = require('gulp-if');
 
+const env = process.env.NODE_ENV;
 
 gulp.task('livereload', () => {
     browserSync.create();
@@ -33,6 +36,7 @@ gulp.task('styles', () => {
 
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
+        .pipe(gulpIf(env, imagemin()))
         .pipe(gulp.dest('./dist/img'));
 });
 
