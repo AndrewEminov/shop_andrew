@@ -46,11 +46,15 @@
     <div class="content__container">
       <div class="block-img">
         <ul class="block-img__product-url">
-          <% const url = ['lisp', 'Одежда', 'Футболки'] %>
+          <% const url = ['LISP', 'Одежда', 'Футболки'] %>
           <% let sleshI = 0 %>
           <% url.forEach(function(item) {%>
             <li class="item-url">
-              <a class = "item-url__link" href="#"><%= item %></a>
+              <%if(item === 'Футболки') {%>
+                <a class = "item-url__link item-url__link--active" href="#"><%= item %></a>
+              <%} else {%>
+                <a class = "item-url__link" href="#"><%= item %></a>
+              <%}%>
             </li>
             <%if(sleshI < url.length-1) {%>
               <span class="slesh">&frasl;</span>
@@ -76,18 +80,19 @@
           <div class="radio">
             <%const size = ['s', 'm', 'l']%>
             <%size.forEach(function(item){%>
-                <input type="radio" id="click" value=""><label for="click"><%=item%></label>
+                <input type="radio" id="click" value="">
+                <label class="radio__block" for="click"><%=item%></label>
             <%});%>
           </div>
 
-          <p class="paragraph-info">Цвет:</p>
+          <p class="paragraph-info paragraph-info--padding">Цвет:</p>
           <div class="radio js-radio">
             <input type="radio" id="click1" data-img="img/tshirts/tshirt_white.jpg">
-            <label class="white" for="click1"></label>
+            <label class="radio__block radio__block--white" for="click1"></label>
             <input type="radio" id="click2" data-img="img/tshirts/tshirt_yellow.jpg">
-            <label class="yellow" for="click2"></label>
+            <label class="radio__block radio__block--yellow" for="click2"></label>
             <input type="radio" id="click3" data-img="img/tshirts/tshirt_green.jpg">
-            <label class="green" for="click3"></label>
+            <label class="radio__block radio__block--green" for="click3"></label>
           </div>
 
           <button class="button" type="button" name="button">

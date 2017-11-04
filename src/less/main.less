@@ -138,9 +138,9 @@ li{
     padding-bottom: 70px;
 
     &__container{
-        .flex();
-        padding: 0 100px;
-        margin-top: 20px;
+        display: flex;
+        padding: 0 80px;
+        margin-top: 10px;
         @media @desktop-strict{
             align-items: flex-start;
         }
@@ -153,7 +153,9 @@ li{
 }
 
 .product-description{
-    width: 50%;
+    width: 45%;
+    padding-top: 45px;
+    padding-left: 60px;
     @media (min-width: 1400px){
         padding-top: 50px;
     }
@@ -167,8 +169,16 @@ li{
     }
 }
 
+.paragraph-info{
+    margin-bottom: 10px;
+
+    &--padding{
+        padding-top: 15px;
+    }
+}
+
 .block-img{
-    width: 45%;
+    width: 50%;
 
     &__product-url{
         .flex();
@@ -199,24 +209,24 @@ li{
 }
 
 .button{
-    width: 180px;
+    width: 170px;
     background: @special-red;
     border: 1px solid;
-    margin-top: 30px;
+    margin-top: 40px;
 
     &__text{
         font-size: 26px;
         color: white;
-        margin: 10px 0;
+        margin: 15px 0;
     }
 }
 
 .like{
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
 
     &__icon{
-        width: 20px;
+        width: 25px;
 
         .img{
             width: 100%;
@@ -233,33 +243,34 @@ li{
     display: flex;
     width: 50%;
 
-    label{
-        width: 60px;
-        height: 50px;
+    &__block{
+        width: 50px;
+        height: 40px;
         font-size: 30px;
         text-transform: uppercase;
         padding-top: 10px;
         text-align: center;
-        margin-right: 5px;
+        margin-right: 10px;
         font-weight: bold;
         border: 1px solid black;
+
+        &--white{
+            background-color: #fffafb;
+        }
+
+        &--yellow{
+            background-color: #e3d95e;
+        }
+
+        &--green{
+            background-color: #a5af96;
+        }
     }
 }
 
 .price{
     color: @special-red;
-}
-
-.white{
-    background-color: #fffafb;
-}
-
-.yellow{
-    background-color: #e3d95e;
-}
-
-.green{
-    background-color: #a5af96;
+    margin: 20px 0;
 }
 
 .radio label::after{
