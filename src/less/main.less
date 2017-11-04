@@ -27,13 +27,15 @@ li{
 
     &__top{
         width: 100%;
-        margin: 15px auto;
+        padding-top: 5px;
         .flex();
     }
 
     &__bottom{
         width: 100%;
         background-color: #f2f2ed;
+        border-top: 1px solid #d9d9d4;
+        border-bottom: 1px solid #d9d9d4;
         .flex();
     }
 
@@ -43,9 +45,15 @@ li{
 }
 
 .menu{
-    .flex();
+    display: flex;
     width: 25%;
-    padding-left: 100px;
+    padding-left: 80px;
+    margin: 13px 0;
+    font-size: 15px;
+
+    &__item{
+        padding-right: 15px;
+    }
     @media @tablet-strict{
         width: 40%;
     }
@@ -63,10 +71,11 @@ li{
 }
 
 .form-for-search{
-    margin-right: 100px;
+    margin-right: 80px;
     display: flex;
     background-color: white;
     padding: 3px;
+    border: 1px solid #d9d9d4;
 
     &__submit{
         border: none;
@@ -86,8 +95,8 @@ li{
 }
 
 .number{
-    width: 100px;
-    padding-left: 100px;
+    width: 85px;
+    padding-left: 80px;
     @media @phone-strict{
         display: none;
     }
@@ -95,6 +104,7 @@ li{
 
 .lable{
     width: 40px;
+    padding-left: 90px;
 
     &__img{
         width: 100%;
@@ -105,10 +115,10 @@ li{
 }
 
 .contact{
-    font-size: 20px;
+    font-size: 23px;
     color: @special-red;
     font-weight: bold;
-    padding-right: 100px;
+    padding-right: 80px;
 
     span{
         position: relative;

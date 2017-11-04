@@ -19,7 +19,7 @@
             <img class="lable__img" src="img/oggetto_logo.svg" alt="">
           </div>
           <!--спросить про точки-->
-          <p class="contact">+7(812) 2<span>.</span>12<span>.</span>85<span>.</span>06
+          <p class="contact">+7 (812) 2<span>.</span>12<span>.</span>85<span>.</span>06
           </p>
         </div>
         <div class="header__bottom">
@@ -27,7 +27,11 @@
             <ul class="menu">
               <% menu.forEach(function(item) { %>
                 <li class="menu__item">
-                  <a class="header__link" href="#"><%= item %></a>
+                  <% if(item === 'LISP') {%>
+                    <a class="header__link header__link--active" href="#"><%= item %></a>
+                  <%} else {%>
+                    <a class="header__link" href="#"><%= item %></a>
+                  <%}%>
                 </li>
               <% }); %>
             </ul>
