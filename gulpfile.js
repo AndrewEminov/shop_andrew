@@ -33,10 +33,15 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./dist/css'));
 
 });
-
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
         .pipe(gulpIf(env, imagemin()))
+        .pipe(gulp.dest('./dist/img'));
+});
+
+gulp.task('compress', () => {
+    gulp.src('src/img/**/*.*')
+        .pipe(imagemin())
         .pipe(gulp.dest('./dist/img'));
 });
 

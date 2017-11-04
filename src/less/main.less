@@ -36,6 +36,10 @@ li{
         background-color: #f2f2ed;
         .flex();
     }
+
+    &__link{
+        color: @special-red;
+    }
 }
 
 .menu{
@@ -46,11 +50,6 @@ li{
         width: 40%;
     }
 
-    &__link{
-        a{
-            color: @special-red;
-        }
-    }
     @media @desktop-strict{
         width: 30%;
     }
@@ -143,7 +142,7 @@ li{
     }
 }
 
-.block-description{
+.product-description{
     width: 50%;
     @media (min-width: 1400px){
         padding-top: 50px;
@@ -175,8 +174,8 @@ li{
     }
 }
 
-.link-url{
-    a{
+.item-url{
+    &__link{
         color: @special-red;
     }
 }
@@ -307,6 +306,11 @@ li{
             padding-bottom: 50px;
         }
     }
+
+    &__link{
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .menu-details{
@@ -348,13 +352,8 @@ li{
         padding-right: 0;
     }
 
-    &__link{
+    &__item{
         line-height: 2;
-
-        a{
-            text-decoration: none;
-            color: black;
-        }
     }
 }
 
@@ -442,7 +441,7 @@ li{
     width: 20%;
     margin-right: 10%;
 
-    img{
+    &__img{
         width: 100%;
         vertical-align: middle;
     }

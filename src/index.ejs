@@ -18,16 +18,16 @@
           <div class="lable">
             <img class="lable__img" src="img/oggetto_logo.svg" alt="">
           </div>
-          <p class="contact">
-            +7(812) 2<span>.</span>12<span>.</span>85<span>.</span>06
+          <!--спросить про точки-->
+          <p class="contact">+7(812) 2<span>.</span>12<span>.</span>85<span>.</span>06
           </p>
         </div>
         <div class="header__bottom">
           <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
             <ul class="menu">
               <% menu.forEach(function(item) { %>
-                <li class="menu__link">
-                  <a href="#"><%= item %></a>
+                <li class="menu__item">
+                  <a class="header__link" href="#"><%= item %></a>
                 </li>
               <% }); %>
             </ul>
@@ -45,8 +45,8 @@
           <% const url = ['lisp', 'Одежда', 'Футболки'] %>
           <% let sleshI = 0 %>
           <% url.forEach(function(item) {%>
-            <li class="link-url">
-              <a href="#"><%= item %></a>
+            <li class="item-url">
+              <a class = "item-url__link" href="#"><%= item %></a>
             </li>
             <%if(sleshI < url.length-1) {%>
               <span class="slesh">&frasl;</span>
@@ -55,16 +55,16 @@
           <% }); %>
         </ul>
         <div class="block-img__clothers">
-          <img class="img img-js" src="img/tshirts/tshirt_white.jpg" alt="">
+          <img class="img js-img" src="img/tshirts/tshirt_white.jpg" alt="">
         </div>
       </div>
-      <div class="block-description">
-        <h1 class="block-description__header-info">Футболка Alien technology</h1>
-        <p class="block-description__paragraph-info">
+      <div class="product-description">
+        <h1 class="product-description__header-info">Футболка Alien technology</h1>
+        <p class="product-description__paragraph-info">
           Состав: 100% хлопок, динамическая типизация, польская нотация.
           Производство: Россия.
         </p>
-        <form class="block-description__form-for-description form-js" action="index.html" method="post">
+        <form class="product-form js-form" action="index.html" method="post">
           <h1 class="price">
             1500&#x584
           </h1>
@@ -77,10 +77,13 @@
           </div>
 
           <p class="paragraph-info">Цвет:</p>
-          <div class="radio radio-js">
-            <input type="radio" id="click1" data-img="white"><label class="white" for="click1"></label>
-            <input type="radio" id="click2" data-img="yellow"><label class="yellow" for="click2"></label>
-            <input type="radio" id="click3" data-img="green"><label class="green" for="click3"></label>
+          <div class="radio js-radio">
+            <input type="radio" id="click1" data-img="img/tshirts/tshirt_white.jpg">
+            <label class="white" for="click1"></label>
+            <input type="radio" id="click2" data-img="img/tshirts/tshirt_yellow.jpg">
+            <label class="yellow" for="click2"></label>
+            <input type="radio" id="click3" data-img="img/tshirts/tshirt_green.jpg">
+            <label class="green" for="click3"></label>
           </div>
 
           <button class="button" type="button" name="button">
@@ -115,8 +118,8 @@
           <% for(let i = 0; i < 4; i++){%>
             <ul class="submenu">
               <% for(let j = 0; j < 4; j++){%>
-                <li class="submenu__link">
-                  <a href="#"><%=submenu[i][j]%></a>
+                <li class="submenu__item">
+                  <a class = "footer__link" href="#"><%=submenu[i][j]%></a>
                 </li>
               <%}%>
             </ul>
@@ -131,13 +134,19 @@
         </ul>
         <div class="additional-details__menu-icons">
           <div class="icon-link icon-link--1">
-            <a href="#"><img src="img/icons/facebook.svg" alt=""></a>
+            <a class="icon-link__facebook" href="#">
+              <img class="icon-link__img" src="img/icons/facebook.svg" alt="">
+            </a>
           </div>
-          <div class="icon-link icon-link--2"><a href="#">
-            <img src="img/icons/twitter.svg" alt=""></a>
+          <div class="icon-link icon-link--2">
+            <a class="icon-link__twitter" href="#">
+              <img class="icon-link__img" src="img/icons/twitter.svg" alt="">
+            </a>
           </div>
-          <div class="icon-link icon-link--3"><a href="#">
-            <img src="img/icons/instagram.svg" alt=""></a>
+          <div class="icon-link icon-link--3">
+            <a class="icon-link__instagram" href="#">
+              <img class="icon-link__img" src="img/icons/instagram.svg" alt="">
+            </a>
           </div>
         </div>
       </div>
