@@ -287,9 +287,11 @@ li{
 
 .footer{
     background-color: #f2f2ed;
+    margin-top: 30px;
+    padding-top: 30px;
 
     &__container{
-        padding: 0 100px;
+        padding: 0 80px 0 60px;
         @media @tablet-strict{
             padding: 0 50px;
         }
@@ -308,7 +310,7 @@ li{
 
     &__top{
         width: 100%;
-        padding-bottom: 50px;
+        padding-bottom: 40px;
         .flex();
         @media @phone-strict{
             padding-bottom: 20px;
@@ -321,8 +323,9 @@ li{
 
     &__bottom{
         border-top: 1px solid #d9d9d4;
-        padding-top: 20px;
+        padding-top: 15px;
         padding-bottom: 100px;
+        padding-left: 20px;
         @media @tablet-max{
             padding-bottom: 50px;
         }
@@ -334,8 +337,12 @@ li{
     }
 }
 
+.name{
+    padding-right: 20px;
+}
+
 .menu-details{
-    width: 50%;
+    width: 55%;
     padding: 0 10px;
     @media @tablet-max{
         width: 90%;
@@ -366,6 +373,7 @@ li{
     padding-left: 0;
     padding-right: 40px;
     font-size: 13px;
+    margin-top: 0;
     @media @tablet-max{
         font-size: 14px;
     }
@@ -374,13 +382,13 @@ li{
     }
 
     &__item{
-        line-height: 2;
+        line-height: 1.5;
     }
 }
 
 .info{
     margin: 0;
-    padding: 5px 0;
+    padding-top: 5px;
     @media @phone-strict{
         font-size: 14px;
         padding-left: 10px;
@@ -389,16 +397,18 @@ li{
 }
 
 .additional-details{
+    width: 40%;
+    .flex();
+    align-items: flex-start;
     @media @tablet-strict{
         width: 100%;
         display: block;
     }
-    width: 50%;
-    .flex();
 
     &__menu{
         line-height: 3;
-        padding-top: 10px;
+        padding-top: 15px;
+        margin-top: 0;
         @media @tablet-strict{
             .flex();
             padding-left: 0;
@@ -426,8 +436,9 @@ li{
 .link--1::before{
     .img-for-link();
     background-image: url('../img/icons/delivery.svg');
-    width: 50px;
+    width: 40px;
     margin-right: 10px;
+    margin-left: 5px;
     @media @tablet-strict{
         width: 35px;
         margin-top: 10px;
@@ -437,9 +448,10 @@ li{
 .link--2::before{
     .img-for-link();
     background-image: url('../img/icons/heart.svg');
-    width: 30px;
+    width: 25px;
     margin-left: 20px;
     margin-right: 10px;
+    margin-top: 10px;
     @media @tablet-strict{
         width: 20px;
         margin-top: 10px;
@@ -449,9 +461,10 @@ li{
 .link--3::before{
     .img-for-link();
     background-image: url('../img/icons/cup.svg');
-    width: 30px;
-    margin-left: 20px;
+    width: 20px;
+    margin-left: 25px;
     margin-right: 10px;
+    margin-top: 10px;
     @media @tablet-strict{
         width: 20px;
         margin-top: 10px;
