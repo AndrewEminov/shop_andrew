@@ -15,8 +15,8 @@
           <div class="number">
             <img class="number__img" src="img/the_shop_logo.svg" alt="">
           </div>
-          <div class="lable">
-            <img class="lable__img" src="img/oggetto_logo.svg" alt="">
+          <div class="label">
+            <img class="label__img" src="img/oggetto_logo.svg" alt="">
           </div>
           <!--спросить про точки-->
           <p class="contact">+7 (812) 2<span>.</span>12<span>.</span>85<span>.</span>06
@@ -44,66 +44,83 @@
   </header>
   <div class="content">
     <div class="content__container">
-      <div class="block-img">
-        <ul class="block-img__product-url">
-          <% const url = ['LISP', 'Одежда', 'Футболки'] %>
-          <% let sleshI = 0 %>
-          <% url.forEach(function(item) {%>
-            <li class="item-url">
-              <%if(item === 'Футболки') {%>
-                <a class = "item-url__link item-url__link--active" href="#"><%= item %></a>
-              <%} else {%>
-                <a class = "item-url__link" href="#"><%= item %></a>
-              <%}%>
-            </li>
-            <%if(sleshI < url.length-1) {%>
-              <span class="slesh">&frasl;</span>
-            <%}%>
-            <%sleshI++%>
-          <% }); %>
-        </ul>
-        <div class="block-img__clothers">
-          <img class="img js-img" src="img/tshirts/tshirt_white.jpg" alt="">
-        </div>
-      </div>
-      <div class="product-description">
-        <h1 class="product-description__header-info">Футболка Alien technology</h1>
-        <p class="product-description__paragraph-info">
+      <div class="tablet-and-less">
+        <h1 class="header-info">Футболка Alien technology</h1>
+        <p class="paragraph-info">
           Состав: 100% хлопок, динамическая типизация, польская нотация.
           Производство: Россия.
         </p>
-        <form class="product-form js-form" action="index.html" method="post">
-          <h1 class="price">
-            1500&#x584
-          </h1>
-          <p class="paragraph-info">Размер:</p>
-          <div class="radio">
-            <%const size = ['s', 'm', 'l']%>
-            <%size.forEach(function(item){%>
-                <input type="radio" id="click" value="">
-                <label class="radio__block" for="click"><%=item%></label>
-            <%});%>
+      </div>
+      <div class="desktop-and-more">
+        <div class="block-img">
+          <ul class="block-img__product-url">
+            <% const url = ['LISP', 'Одежда', 'Футболки'] %>
+            <% let sleshI = 0 %>
+            <% url.forEach(function(item) {%>
+              <li class="item-url">
+                <%if(item === 'Футболки') {%>
+                  <a class = "item-url__link item-url__link--active" href="#"><%= item %></a>
+                <%} else {%>
+                  <a class = "item-url__link" href="#"><%= item %></a>
+                <%}%>
+              </li>
+              <%if(sleshI < url.length-1) {%>
+                <span class="slesh">&frasl;</span>
+              <%}%>
+              <%sleshI++%>
+            <% }); %>
+          </ul>
+          <div class="block-img__clothers">
+            <img class="img js-img" src="img/tshirts/tshirt_white.jpg" alt="">
           </div>
+        </div>
+        <div class="product-description">
+          <h1 class="product-description__header-info">Футболка Alien technology</h1>
+          <p class="product-description__paragraph-info">
+            Состав: 100% хлопок, динамическая типизация, польская нотация.
+            Производство: Россия.
+          </p>
+          <form class="product-form js-form" action="index.html" method="post">
+            <h1 class="price">
+              1500&#x584
+            </h1>
+            <p class="paragraph-info">Размер:</p>
+            <div class="radio">
+              <%const size = ['s', 'm', 'l']%>
+              <%size.forEach(function(item){%>
+                  <input type="radio" id="click" value="">
+                  <label class="radio__block" for="click"><%=item%></label>
+              <%});%>
+            </div>
 
-          <p class="paragraph-info paragraph-info--padding">Цвет:</p>
-          <div class="radio js-radio">
-            <input type="radio" id="click1" data-img="img/tshirts/tshirt_white.jpg">
-            <label class="radio__block radio__block--white" for="click1"></label>
-            <input type="radio" id="click2" data-img="img/tshirts/tshirt_yellow.jpg">
-            <label class="radio__block radio__block--yellow" for="click2"></label>
-            <input type="radio" id="click3" data-img="img/tshirts/tshirt_green.jpg">
-            <label class="radio__block radio__block--green" for="click3"></label>
-          </div>
+            <p class="paragraph-info paragraph-info--padding">Цвет:</p>
+            <div class="radio js-radio">
+              <input type="radio" id="click1" data-img="img/tshirts/tshirt_white.jpg">
+              <label class="radio__block radio__block--white" for="click1"></label>
+              <input type="radio" id="click2" data-img="img/tshirts/tshirt_yellow.jpg">
+              <label class="radio__block radio__block--yellow" for="click2"></label>
+              <input type="radio" id="click3" data-img="img/tshirts/tshirt_green.jpg">
+              <label class="radio__block radio__block--green" for="click3"></label>
+            </div>
 
-          <button class="button" type="button" name="button">
-            <p class="button__text">Купить</p>
-          </button>
-        </form>
-        <div class="like">
-          <div class="like__icon">
-            <img class="img" src="img/heart-icon.png" alt="">
+            <button class="button" type="button" name="button">
+              <p class="button__text">Купить</p>
+            </button>
+          </form>
+          <div class="like">
+            <div class="like__icon">
+              <img class="img" src="img/heart-icon.png" alt="">
+            </div>
+            <a href="#" class="like__text">Отложить на потом</a>
           </div>
-          <a href="#" class="like__text">Отложить на потом</a>
+        </div>
+      </div>
+      <div class="tablet-strict">
+        <div class="tablet-strict__like">
+          <div class="icon">
+            <img class="icon__img" src="img/heart-icon.png" alt="">
+          </div>
+          <a href="#" class="text">Отложить на потом</a>
         </div>
       </div>
     </div>

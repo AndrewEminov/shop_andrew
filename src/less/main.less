@@ -25,6 +25,18 @@ li{
 .header{
     width: 100%;
 
+    @media @phone-strict{
+        background-color: grey;
+    }
+
+    @media @tablet-strict{
+        background-color: green;
+    }
+
+    @media @desktop-strict{
+        background-color: blue;
+    }
+
     &__top{
         width: 100%;
         padding-top: 5px;
@@ -67,6 +79,7 @@ li{
         padding-left: 0;
         margin: 0 auto;
         font-size: 13px;
+        justify-content: space-around;
     }
 }
 
@@ -102,15 +115,16 @@ li{
     }
 }
 
-.lable{
+.label{
     width: 40px;
     padding-left: 90px;
+    @media @phone-strict{
+        padding-left: 0;
+        margin: 10px auto;
+    }
 
     &__img{
         width: 100%;
-    }
-    @media @phone-strict{
-        margin: 0 auto;
     }
 }
 
@@ -138,17 +152,29 @@ li{
     padding-bottom: 70px;
 
     &__container{
-        display: flex;
         padding: 0 80px;
         margin-top: 10px;
-        @media @desktop-strict{
-            align-items: flex-start;
+        @media @phone-strict{
+            padding: 0 40px;
         }
-        @media (min-width: 1400px){
-            width: 1340px;
-            margin: 0 auto;
-            align-items: flex-start;
-        }
+    }
+}
+
+.desktop-and-more {
+    display: flex;
+
+    @media @phone-strict{
+        display: block;
+    }
+
+    @media @desktop-strict{
+        align-items: flex-start;
+        padding-right: 30px;
+    }
+    @media (min-width: 1400px){
+        width: 1340px;
+        margin: 0 auto;
+        align-items: flex-start;
     }
 }
 
@@ -159,26 +185,104 @@ li{
     @media (min-width: 1400px){
         padding-top: 50px;
     }
+    @media @tablet-strict{
+        width: 40%;
+        padding-top: 0;
+    }
+
+    @media @phone-strict{
+        width: 100%;
+        padding-top: 0;
+        padding-left: 0;
+    }
 
     &__header-info{
         margin: 0;
+        @media @desktop-strict{
+            font-size: 27px;
+        }
+        @media @tablet-max{
+            display: none;
+        }
     }
 
     &__paragraph-info{
         margin: 5px 0;
+        @media @desktop-strict{
+            margin-right: 50px
+        }
+        @media @tablet-max{
+            display: none;
+        }
+        @media @phone-strict{
+            font-size: 27px;
+            text-align: center;
+        }
     }
 }
 
 .paragraph-info{
     margin-bottom: 10px;
+    @media @desktop-strict{
+        margin: 10px 0;
+    }
+    @media @phone-strict{
+        text-align: justify;
+    }
 
     &--padding{
         padding-top: 15px;
+        @media @tablet-max{
+            padding-top: 0;
+        }
+        @media @desktop-strict{
+            padding-top: 5px;
+        }
+    }
+}
+
+.tablet-and-less{
+    display: none;
+    @media @tablet-max{
+        display: block;
+    }
+}
+
+.tablet-strict{
+    display: none;
+    @media @tablet-strict{
+        display: block;
+
+        &__like{
+            display: flex;
+            margin-top: 20px;
+
+            .icon{
+                width: 25px;
+
+                &__img{
+                    width: 100%;
+                }
+            }
+
+            .text{
+                color: #999;
+                padding-left: 10px;
+            }
+        }
     }
 }
 
 .block-img{
     width: 50%;
+
+    @media @phone-strict{
+        width: 100%;
+    }
+
+    @media @tablet-strict{
+        width: 60%;
+    }
 
     &__product-url{
         .flex();
@@ -213,6 +317,9 @@ li{
     background: @special-red;
     border: 1px solid;
     margin-top: 40px;
+    @media @desktop-max{
+        margin-top: 30px;
+    }
 
     &__text{
         font-size: 26px;
@@ -224,6 +331,13 @@ li{
 .like{
     display: flex;
     margin-top: 40px;
+
+    @media @tablet-strict{
+        display: none;
+    }
+    @media @desktop-max{
+        margin-top: 30px;
+    }
 
     &__icon{
         width: 25px;
@@ -241,7 +355,6 @@ li{
 
 .radio{
     display: flex;
-    width: 50%;
 
     &__block{
         width: 50px;
@@ -271,6 +384,21 @@ li{
 .price{
     color: @special-red;
     margin: 20px 0;
+    @media @phone-strict{
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-size: 25px;
+    }
+    @media @tablet-strict{
+        margin-top: 50px;
+        margin-bottom: 0;
+        font-size: 27px;
+    }
+
+    @media @desktop-strict{
+        margin-top: 10px;
+        font-size: 27px;
+    }
 }
 
 .radio label::after{
@@ -289,6 +417,7 @@ li{
     background-color: #f2f2ed;
     margin-top: 30px;
     padding-top: 30px;
+    border-top: 1px solid #d9d9d4;
 
     &__container{
         padding: 0 80px 0 60px;
@@ -344,6 +473,9 @@ li{
 .menu-details{
     width: 55%;
     padding: 0 10px;
+    @media @desktop-strict{
+        width: 60%;
+    }
     @media @tablet-max{
         width: 90%;
         margin: 0 auto;
@@ -366,6 +498,10 @@ li{
         align-items: flex-start;
         flex-wrap: wrap;
         justify-content: space-around;
+        @media @phone-strict{
+            display: block;
+            text-align: center;
+        }
     }
 }
 
@@ -378,6 +514,9 @@ li{
         font-size: 14px;
     }
     @media @desktop-strict{
+        padding-right: 0;
+    }
+    @media @phone-strict{
         padding-right: 0;
     }
 
@@ -400,6 +539,9 @@ li{
     width: 40%;
     .flex();
     align-items: flex-start;
+    @media @desktop-strict{
+        justify-content: space-around;
+    }
     @media @tablet-strict{
         width: 100%;
         display: block;
@@ -500,6 +642,6 @@ li{
 
 .border{
     border: 3px solid @special-red !important;
-    height: 47px !important;
-    width: 57px !important;
+    height: 36px !important;
+    width: 46px !important;
 }
