@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
+
   <header class="header">
       <div class="header__container">
         <div class="header__top">
@@ -19,7 +20,6 @@
           <div class="label">
             <img class="label__img" src="img/oggetto_logo.svg" alt="">
           </div>
-          <!--спросить про точки-->
           <p class="contact">+7 (812) 2<span>.</span>12<span>.</span>85<span>.</span>06
           </p>
         </div>
@@ -43,6 +43,7 @@
         </div>
       </div>
   </header>
+
   <div class="content">
     <div class="content__container">
       <div class="tablet-and-less">
@@ -72,35 +73,33 @@
             <% }); %>
           </ul>
           <div class="block-img__clothers">
-            <img class="img js-img" src="img/tshirts/tshirt_white.jpg" alt="">
+            <img class="img js-img" id="productPicture" src="img/tshirts/tshirt_white.jpg" alt="">
           </div>
         </div>
-        <div class="product-description">
+        <div class="product-description" id="doc">
           <h1 class="product-description__header-info">Футболка Alien technology</h1>
           <p class="product-description__paragraph-info">
             Состав: 100% хлопок, динамическая типизация, польская нотация.
             Производство: Россия.
           </p>
-          <form class="product-form js-form" action="index.html" method="post">
-            <h1 class="price">
-              1500&#x584
-            </h1>
+          <form class="product-form js-form product-props" action="index.html" method="post">
+            <h1 class="price">1500₽</h1>
             <p class="paragraph-info">Размер:</p>
-            <div class="radio">
+            <div class="radio" id="sizeList">
               <%const size = ['s', 'm', 'l']%>
               <%size.forEach(function(item){%>
-                  <input type="radio" id="click" value="">
+                  <input type="radio" id="click" class="product-prop" data-type="size">
                   <label class="radio__block" for="click"><%=item%></label>
               <%});%>
             </div>
 
             <p class="paragraph-info paragraph-info--padding">Цвет:</p>
-            <div class="radio js-radio">
-              <input type="radio" id="click1" data-img="img/tshirts/tshirt_white.jpg">
+            <div class="radio js-radio" id="colorList">
+              <input type="radio" id="click1" class="product-prop" data-type="color" data-value="white">
               <label class="radio__block radio__block--white" for="click1"></label>
-              <input type="radio" id="click2" data-img="img/tshirts/tshirt_yellow.jpg">
+              <input type="radio" id="click2" class="product-prop" data-type="color" data-value="yellow">
               <label class="radio__block radio__block--yellow" for="click2"></label>
-              <input type="radio" id="click3" data-img="img/tshirts/tshirt_green.jpg">
+              <input type="radio" id="click3" class="product-prop" data-type="color" data-value="green">
               <label class="radio__block radio__block--green" for="click3"></label>
             </div>
 
@@ -126,6 +125,7 @@
       </div>
     </div>
   </div>
+
   <footer class="footer">
     <div class="footer__container">
     <div class="footer__top">
@@ -156,8 +156,8 @@
       <div class="additional-details">
         <ul class="additional-details__menu">
           <li class="link link--1">бесплатная доставка от 4000&#x584</li>
-          <li class="link link--2">Пробники в подарок при каждой покупке</li>
-          <li class="link link--3">Акции и подарки за покупку</li>
+          <li class="link link--2">пробники в подарок при каждой покупке</li>
+          <li class="link link--3">акции и подарки за покупку</li>
         </ul>
         <div class="additional-details__menu-icons">
           <div class="icon-link icon-link--1">
@@ -189,8 +189,6 @@
     </div>
   </div>
   </footer>
-<body>
-</body>
 <script src="js/scripts.js"></script>
 </body>
 </html>

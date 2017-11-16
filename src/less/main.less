@@ -5,7 +5,6 @@
 li{
     list-style-type: none;
 }
-
 //////// mixins
 .flex(){
     display: flex;
@@ -27,7 +26,8 @@ li{
 
     &__top{
         width: 100%;
-        padding-top: 5px;
+        padding-top: 10px;
+        padding-bottom: 5px;
         .flex();
     }
 
@@ -36,6 +36,7 @@ li{
         background-color: #f2f2ed;
         border-top: 1px solid #d9d9d4;
         border-bottom: 1px solid #d9d9d4;
+        padding-bottom: 5px;
         .flex();
     }
 
@@ -51,39 +52,38 @@ li{
 }
 
 .menu{
-    display: flex;
-    width: 25%;
-    padding-left: 80px;
-    margin: 13px 0;
-    font-size: 14px;
+    .flex();
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    font-size: 13px;
     font-family: Roboto-Regular;
 
     &__item{
         padding-right: 15px;
     }
-    @media @tablet-strict{
+
+    @media @tablet{
         width: 40%;
+        padding: 0;
+        padding-left: 105px;
+        margin: 13px 0;
+        font-size: 15px;
+        justify-content: flex-start;
     }
 
-    @media @desktop-strict{
+    @media @desktop{
         width: 30%;
+        font-size: 17px;
     }
-    @media @phone-strict{
-        width: 80%;
-        padding: 20px 0;
-        padding-left: 0;
-        margin: 0 auto;
-        font-size: 13px;
-        justify-content: space-around;
+
+    @media @large{
+        width: 25%;
     }
 }
 
 .form-for-search{
-    margin-right: 80px;
-    display: flex;
-    background-color: white;
-    padding: 3px;
-    border: 1px solid #d9d9d4;
+    display: none;
 
     &__submit{
         border: none;
@@ -96,26 +96,39 @@ li{
     &__search{
         border: none;
         margin-right: 5px;
+        width: 235px;
+        @media @tablet-strict{
+            width: 200px;
+        }
     }
-    @media @phone-strict{
-        display: none;
+    @media @tablet{
+        margin-right: 100px;
+        display: flex;
+        background-color: white;
+        padding: 7px;
+        border: 1px solid #d9d9d4;
     }
 }
 
 .number{
-    width: 85px;
-    padding-left: 80px;
-    @media @phone-strict{
-        display: none;
+    display: none;
+    @media @tablet{
+        display: block;
+        width: 100px;
+        padding-left: 105px;
     }
 }
 
 .label{
-    width: 40px;
-    padding-left: 90px;
-    @media @phone-strict{
-        padding-left: 0;
-        margin: 15px auto;
+    width: 50px;
+    padding-left: 0;
+    margin: 15px auto;
+    @media @desktop{
+        padding-left: 110px;
+    }
+    @media @tablet{
+        padding-left: 30px;
+        margin: 0;
     }
 
     &__img{
@@ -124,18 +137,20 @@ li{
 }
 
 .contact{
-    font-size: 20px;
-    color: @special-red;
-    padding-right: 80px;
-    font-family: Roboto-Bold;
+    display: none;
 
     span{
         position: relative;
-        bottom: 4px;
+        bottom: 8px;
         font-size: 30px;
     }
-    @media @phone-strict{
-        display: none;
+    @media @tablet{
+        display: block;
+        color: @special-red;
+        font-family: Roboto-Bold;
+        font-size: 24px;
+        padding-right: 100px;
+        margin-top: 15px;
     }
 }
 
@@ -147,76 +162,65 @@ li{
     padding-bottom: 70px;
 
     &__container{
-        padding: 0 80px;
+        padding: 0 40px;
         margin-top: 10px;
-        @media @phone-strict{
-            padding: 0 40px;
+        @media @tablet{
+            padding: 0 100px;
+        }
+        @media @large{
+            max-width: 1600px;
+            margin: 0 auto;
         }
     }
 }
 
 .desktop-and-more {
-    display: flex;
+    display: block;
 
-    @media @phone-strict{
-        display: block;
+    @media @tablet{
+        display: flex;
     }
-
-    @media @desktop-strict{
-        align-items: flex-start;
+    @media @desktop{
         padding-right: 30px;
-    }
-    @media (min-width: 1400px){
-        width: 1340px;
-        margin: 0 auto;
-        align-items: flex-start;
     }
 }
 
 .product-description{
-    width: 45%;
-    padding-top: 45px;
-    padding-left: 60px;
-    @media (min-width: 1400px){
+    width: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    @media @large{
         padding-top: 50px;
     }
-    @media @tablet-strict{
+    @media @tablet{
         width: 40%;
         padding-top: 0;
+        padding-left: 40px;
     }
 
-    @media @phone-strict{
-        width: 100%;
-        padding-top: 0;
-        padding-left: 0;
+    @media @desktop{
+        width: 45%;
+        padding-top: 70px;
     }
 
     &__header-info{
-        margin: 0;
-        font-family: Roboto-Bold;
-        font-size: 30px;
-        @media @desktop-strict{
-            font-size: 27px;
-        }
-        @media @tablet-max{
-            display: none;
+        display: none;
+        @media @desktop{
+            display: block;
+            margin: 0;
+            font-family: Roboto-Bold;
+            font-size: 36px;
         }
     }
 
     &__paragraph-info{
-        margin: 5px 0;
-        margin-top: 15px;
-        font-family: Roboto-Regular;
-        font-size: 13px;
-        @media @desktop-strict{
-            margin-right: 50px
-        }
-        @media @tablet-max{
-            display: none;
-        }
-        @media @phone-strict{
-            font-size: 27px;
-            text-align: center;
+        display: none;
+        @media @desktop{
+            display: block;
+            margin: 5px 0;
+            margin-top: 10px;
+            font-family: Roboto-Regular;
+            font-size: 16px;
         }
     }
 }
@@ -224,29 +228,35 @@ li{
 .paragraph-info{
     margin-bottom: 15px;
     font-family: Roboto-Regular;
-    font-size: 13px;
-    @media @desktop-strict{
-        margin: 10px 0;
+    font-size: 16px;
+    text-align: justify;
+    @media @desktop{
+        margin-top: 25px;
+        margin-bottom: 14px;
     }
-    @media @phone-strict{
-        text-align: justify;
+    @media @tablet{
+        text-align: left;
     }
 
     &--padding{
         padding-top: 15px;
-        @media @tablet-max{
-            padding-top: 0;
-        }
-        @media @desktop-strict{
+        @media @desktop{
             padding-top: 5px;
+        }
+        @media @tablet{
+            padding-top: 0;
         }
     }
 }
 
 .tablet-and-less{
-    display: none;
-    @media @tablet-max{
-        display: block;
+    display: block;
+    text-align: center;
+    @media @desktop{
+        display: none;
+    }
+    @media @tablet{
+        text-align: left;
     }
 }
 
@@ -254,10 +264,10 @@ li{
     display: none;
     @media @tablet-strict{
         display: block;
+        padding-top: 10px;
 
         &__like{
             display: flex;
-            margin-top: 20px;
 
             .icon{
                 width: 25px;
@@ -276,14 +286,12 @@ li{
 }
 
 .block-img{
-    width: 50%;
-
-    @media @phone-strict{
-        width: 100%;
-    }
-
-    @media @tablet-strict{
+    width: 100%;
+    @media @tablet{
         width: 60%;
+    }
+    @media @large{
+        width: 51%;
     }
 
     &__product-url{
@@ -292,8 +300,8 @@ li{
         width: 30%;
         padding-left: 0;
         font-family: Roboto-Regular;
-        font-size: 13px;
-        padding-top: 10px;
+        font-size: 16px;
+        padding-top: 20px;
     }
 
     &__clothers{
@@ -323,36 +331,44 @@ li{
 }
 
 .button{
-    width: 170px;
-    background: @special-red;
+    width: 200px;
+    background: #c00;
     border: 1px solid;
-    margin-top: 35px;
+    margin-top: 30px;
     font-family: Roboto-Regular;
-    @media @desktop-max{
-        margin-top: 30px;
+    padding-top: 10px;
+    @media @large{
+        margin-top: 40px;
+    }
+    @media @tablet{
+        width: 180px;
     }
 
     &__text{
-        font-size: 26px;
+        font-size: 30px;
         color: white;
-        margin: 15px 0;
+        margin-top: 10px;
+        margin-bottom: 22px;
+        @media @tablet{
+            margin-bottom: 20px;
+        }
     }
 }
 
 .like{
     display: flex;
-    margin-top: 40px;
+    margin-top: 30px;
     font-family: Roboto-Regular;
     font-size: 13px;
     @media @tablet-strict{
         display: none;
     }
-    @media @desktop-max{
-        margin-top: 30px;
+    @media @tablet{
+        margin-top: 40px;
     }
 
     &__icon{
-        width: 20px;
+        width: 30px;
 
         .img{
             width: 100%;
@@ -362,6 +378,7 @@ li{
     &__text{
         color: #999;
         padding-left: 5px;
+        font-size: 16px;
     }
 }
 
@@ -370,15 +387,15 @@ li{
     font-family: Roboto-Regular;
 
     &__block{
-        width: 50px;
-        height: 40px;
+        width: 65px;
+        height: 50px;
         font-size: 30px;
         text-transform: uppercase;
-        padding-top: 10px;
-        padding-bottom: 5px;
+        padding-top: 15px;
+        padding-bottom: 2px;
         padding-left: 1px;
         text-align: center;
-        margin-right: 10px;
+        margin-right: 7px;
         font-weight: bold;
         border: 1px solid black;
 
@@ -398,22 +415,18 @@ li{
 
 .price{
     color: @special-red;
-    margin: 20px 0;
     font-family: Roboto-Bold;
-    @media @phone-strict{
-        margin-top: 30px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 25px;
+    @media @tablet{
+        margin-top: 40px;
         margin-bottom: 0;
-        font-size: 25px;
-    }
-    @media @tablet-strict{
-        margin-top: 50px;
-        margin-bottom: 0;
-        font-size: 27px;
     }
 
-    @media @desktop-strict{
-        margin-top: 10px;
-        font-size: 27px;
+    @media @desktop{
+        margin-top: 25px;
+        font-size: 36px;
     }
 }
 
@@ -427,40 +440,35 @@ li{
     display: none;
 }
 
-/////// footer block
-
+// footer
 .footer{
     background-color: #f2f2ed;
-    margin-top: 30px;
+    margin-top: 55px;
     padding-top: 30px;
     border-top: 1px solid #d9d9d4;
 
     &__container{
-        padding: 0 80px 0 60px;
-        @media @tablet-strict{
-            padding: 0 50px;
+        padding: 0;
+        @media @tablet{
+            padding: 0 10px;
         }
-        @media (min-width: 1400px){
-            width: 1340px;
-            margin: 0 auto;
-            padding: 0;
-        }
-        @media @desktop-strict{
+        @media @desktop{
             padding: 0 40px;
         }
-        @media @phone-strict{
-            padding: 0;
+        @media @large{
+            padding: 0 100px 0 90px;
+            max-width: 1600px;
+            margin: 0 auto;
         }
     }
 
     &__top{
         width: 100%;
-        padding-bottom: 40px;
+        //padding-bottom: 40px;
+        padding-bottom: 55px;
+        padding-top: 15px;
         .flex();
-        @media @phone-strict{
-            padding-bottom: 20px;
-            padding-top: 10px;
-        }
+        align-items: flex-start;
         @media @tablet-max{
             display: block;
         }
@@ -470,7 +478,7 @@ li{
         border-top: 1px solid #d9d9d4;
         padding-top: 15px;
         padding-bottom: 100px;
-        padding-left: 20px;
+        padding-left: 15px;
         @media @tablet-max{
             padding-bottom: 50px;
         }
@@ -483,17 +491,16 @@ li{
 }
 
 .name{
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 .menu-details{
     width: 55%;
-    padding: 0 10px;
     @media @desktop-strict{
         width: 60%;
     }
     @media @tablet-max{
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -501,7 +508,7 @@ li{
         .flex();
         width: 75%;
         font-family: Roboto-Bold;
-        font-size: 14px;
+        font-size: 16px;
         @media @desktop-strict{
             width: 80%;
         }
@@ -511,31 +518,37 @@ li{
     }
 
     &__block-for-links{
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        font-family: Roboto-Regular;
+        display: block;
+        text-align: center;
         font-size: 12px;
-        @media @phone-strict{
-            display: block;
-            text-align: center;
+        @media @tablet{
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            font-family: Roboto-Regular;
+            text-align: inherit;
+            font-size: 16px;
+        }
+        @media @desktop{
+            flex-wrap: nowrap;
+            font-size: 14px;
         }
     }
 }
 
 .submenu{
     padding-left: 0;
-    padding-right: 40px;
     margin-top: 0;
-    @media @tablet-max{
-        font-size: 14px;
-    }
-    @media @desktop-strict{
+    padding-right: 0;
+    @media @tablet{
         padding-right: 0;
     }
-    @media @phone-strict{
-        padding-right: 0;
+    @media @desktop{
+        padding-right: 10px;
+    }
+    @media @large{
+        padding-right: 40px;
     }
 
     &__item{
@@ -545,12 +558,11 @@ li{
 
 .info{
     margin: 0;
-    padding-top: 5px;
     font-family: Roboto-Regular;
-    font-size: 12px;
-    @media @phone-strict{
-        padding-left: 10px;
-        padding-right: 10px;
+    font-size: 14px;
+    padding-right: 10px;
+    @media @tablet{
+        padding-top: 8px;
     }
 }
 
@@ -567,29 +579,33 @@ li{
     }
 
     &__menu{
-        line-height: 3;
+        line-height: 2.5;
         padding-top: 15px;
         margin-top: 0;
-        @media @tablet-strict{
+        display: none;
+        @media @tablet{
             .flex();
             padding-left: 0;
         }
-        @media @phone-strict{
-            display: none;
+        @media @desktop{
+            display: block;
         }
     }
 
     &__menu-icons{
         line-height: 3;
-        @media @tablet-strict{
-            display: flex;
-            margin-top: 20px;
-        }
-        @media @phone-strict{
-            display: flex;
-            width: 100%;
-            margin-top: 20px;
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+        padding-left: 20px;
+        @media @tablet{
             padding-left: 20px;
+            width: auto;
+        }
+        @media @desktop{
+            display: block;
+            margin-top: 0;
+            padding-left: 0;
         }
     }
 }
@@ -597,8 +613,8 @@ li{
 .link--1::before{
     .img-for-link();
     background-image: url('../img/icons/delivery.svg');
-    width: 40px;
-    margin-right: 10px;
+    width: 45px;
+    margin-right: 14px;
     margin-left: 5px;
     @media @tablet-strict{
         width: 35px;
@@ -610,25 +626,27 @@ li{
     .img-for-link();
     background-image: url('../img/icons/heart.svg');
     width: 25px;
-    margin-left: 20px;
-    margin-right: 10px;
+    margin-left: 23px;
+    margin-right: 15px;
     margin-top: 10px;
     @media @tablet-strict{
         width: 20px;
         margin-top: 10px;
+        margin-left: 0;
     }
 }
 
 .link--3::before{
     .img-for-link();
     background-image: url('../img/icons/cup.svg');
-    width: 20px;
+    width: 25px;
     margin-left: 25px;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: 15px;
+    margin-top: 15px;
     @media @tablet-strict{
         width: 20px;
         margin-top: 10px;
+        margin-left: 0;
     }
 }
 
@@ -643,24 +661,28 @@ li{
 
     &--1{
         width: 15px;
+        padding-left: 10px;
+        margin-top: 8px;
     }
 
     &--2{
-        width: 25px;
+        width: 35px;
+        margin-top: 5px;
     }
 
     &--3{
-        width: 25px;
+        width: 33px;
+        margin-top: 5px;
     }
 }
 
 .link{
-    font-size: 12px;
+    font-size: 14px;
 }
 /////// styles for js
 
 .border{
-    border: 3px solid @special-red !important;
-    height: 36px !important;
-    width: 46px !important;
+    border: 4px solid @special-red !important;
+    height: 45px !important;
+    width: 60px !important;
 }
