@@ -18,6 +18,8 @@
     "eslint": "^3.19.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-ejs": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.4.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",

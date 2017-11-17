@@ -1,18 +1,40 @@
-const switchBlocks = document.querySelector('.form-js');
-const switchImgBlocks = document.querySelector('.radio-js');
-const tshirt = document.querySelector('.img-js');
+const Dispatcher = document.getElementById('doc');
 let selectedLi;
+class PropertySelector {
+    constructor(el) {
+        this.el = el;
+        this.el.addEventListener('click', ev => {
+            const type = ev.target.dataset['type'];
+            const value = ev.target.dataset['value'];
+            const target = ev.target;
+            this.dispatchEvent(type, value);
 
-switchBlocks.addEventListener('click', function(event) {
-    const target = event.target;
+            if (target.tagName != 'LABEL') return;
+            setBorder(target);
+        });
+    }
 
-    if (target.tagName != 'LABEL') return;
+    dispatchEvent(type, value) {
+        const event = new CustomEvent('property-selected', {
+            detail: {
+                type: type,
+                value: value
+            }
+        });
+        // Pub/Sub
+        Dispatcher.dispatchEvent(event);
+    }
+}
+Dispatcher.addEventListener('property-selected', ev => {
+    const data = ev.detail;
 
-    border(target);
+    if (data.type === 'color') {
+        changePicture(data.value);
 
+    }
 });
 
-function border(node) {
+function setBorder(node) {
     if (selectedLi) {
         selectedLi.classList.remove('border');
     }
@@ -20,15 +42,9 @@ function border(node) {
     selectedLi.classList.add('border');
 }
 
-switchImgBlocks.addEventListener('click', function(event) {
-    const objectImg = {
-        white: 'img/tshirts/tshirt_white.jpg',
-        yellow: 'img/tshirts/tshirt_yellow.jpg',
-        green : 'img/tshirts/tshirt_green.jpg'
-    };
-    for (var key in objectImg) {
-        if(event.target.getAttribute('data-img') == key){
-            tshirt.src = objectImg[key];
-        }
-    }
-});
+function changePicture(color) {
+    document.getElementById('productPicture').src = 'img/tshirts/tshirt_' + color + '.jpg';
+}
+
+new PropertySelector(document.getElementById('colorList'));
+new PropertySelector(document.getElementById('sizeList'));

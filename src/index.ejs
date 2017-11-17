@@ -7,27 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
+
   <header class="header">
       <div class="header__container">
         <div class="header__top">
           <div class="number">
             <img class="number__img" src="img/the_shop_logo.svg" alt="">
           </div>
-          <div class="lable">
-            <img class="lable__img" src="img/oggetto_logo.svg" alt="">
+          <div class="label">
+            <img class="label__img" src="img/oggetto_logo.svg" alt="">
           </div>
-          <p class="contact">
-            +7(812) 2<span>.</span>12<span>.</span>85<span>.</span>06
+          <p class="contact">+7 (812) 2<span>.</span>12<span>.</span>85<span>.</span>06
           </p>
         </div>
         <div class="header__bottom">
           <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
             <ul class="menu">
               <% menu.forEach(function(item) { %>
-                <li class="menu__link">
-                  <a href="#"><%= item %></a>
+                <li class="menu__item">
+                  <% if(item === 'LISP') {%>
+                    <a class="header__link header__link--active" href="#"><%= item %></a>
+                  <%} else {%>
+                    <a class="header__link" href="#"><%= item %></a>
+                  <%}%>
                 </li>
               <% }); %>
             </ul>
@@ -38,64 +43,89 @@
         </div>
       </div>
   </header>
+
   <div class="content">
     <div class="content__container">
-      <div class="block-img">
-        <ul class="block-img__product-url">
-          <% const url = ['lisp', 'Одежда', 'Футболки'] %>
-          <% let sleshI = 0 %>
-          <% url.forEach(function(item) {%>
-            <li class="link-url">
-              <a href="#"><%= item %></a>
-            </li>
-            <%if(sleshI < url.length-1) {%>
-              <span class="slesh">&frasl;</span>
-            <%}%>
-            <%sleshI++%>
-          <% }); %>
-        </ul>
-        <div class="block-img__clothers">
-          <img class="img img-js" src="img/tshirts/tshirt_white.jpg" alt="">
-        </div>
-      </div>
-      <div class="block-description">
-        <h1 class="block-description__header-info">Футболка Alien technology</h1>
-        <p class="block-description__paragraph-info">
+      <div class="tablet-and-less">
+        <h1 class="header-info">Футболка Alien technology</h1>
+        <p class="paragraph-info">
           Состав: 100% хлопок, динамическая типизация, польская нотация.
           Производство: Россия.
         </p>
-        <form class="block-description__form-for-description form-js" action="index.html" method="post">
-          <h1 class="price">
-            1500&#x584
-          </h1>
-          <p class="paragraph-info">Размер:</p>
-          <div class="radio">
-            <%const size = ['s', 'm', 'l']%>
-            <%size.forEach(function(item){%>
-                <input type="radio" id="click" value=""><label for="click"><%=item%></label>
-            <%});%>
+      </div>
+      <div class="desktop-and-more">
+        <div class="block-img">
+          <ul class="block-img__product-url">
+            <% const url = ['LISP', 'Одежда', 'Футболки'] %>
+            <% let sleshI = 0 %>
+            <% url.forEach(function(item) {%>
+              <li class="item-url">
+                <%if(item === 'Футболки') {%>
+                  <a class = "item-url__link item-url__link--active" href="#"><%= item %></a>
+                <%} else {%>
+                  <a class = "item-url__link" href="#"><%= item %></a>
+                <%}%>
+              </li>
+              <%if(sleshI < url.length-1) {%>
+                <span class="slesh">&frasl;</span>
+              <%}%>
+              <%sleshI++%>
+            <% }); %>
+          </ul>
+          <div class="block-img__clothers">
+            <img class="img js-img" id="productPicture" src="img/tshirts/tshirt_white.jpg" alt="">
           </div>
+        </div>
+        <div class="product-description" id="doc">
+          <h1 class="product-description__header-info">Футболка Alien technology</h1>
+          <p class="product-description__paragraph-info">
+            Состав: 100% хлопок, динамическая типизация, польская нотация.
+            Производство: Россия.
+          </p>
+          <form class="product-form js-form product-props" action="index.html" method="post">
+            <h1 class="price">1500₽</h1>
+            <p class="paragraph-info">Размер:</p>
+            <div class="radio" id="sizeList">
+              <%const size = ['s', 'm', 'l']%>
+              <%size.forEach(function(item){%>
+                  <input type="radio" id="click" class="product-prop" data-type="size">
+                  <label class="radio__block" for="click"><%=item%></label>
+              <%});%>
+            </div>
 
-          <p class="paragraph-info">Цвет:</p>
-          <div class="radio radio-js">
-            <input type="radio" id="click1" data-img="white"><label class="white" for="click1"></label>
-            <input type="radio" id="click2" data-img="yellow"><label class="yellow" for="click2"></label>
-            <input type="radio" id="click3" data-img="green"><label class="green" for="click3"></label>
-          </div>
+            <p class="paragraph-info paragraph-info--padding">Цвет:</p>
+            <div class="radio js-radio" id="colorList">
+              <input type="radio" id="click1" class="product-prop" data-type="color" data-value="white">
+              <label class="radio__block radio__block--white" for="click1"></label>
+              <input type="radio" id="click2" class="product-prop" data-type="color" data-value="yellow">
+              <label class="radio__block radio__block--yellow" for="click2"></label>
+              <input type="radio" id="click3" class="product-prop" data-type="color" data-value="green">
+              <label class="radio__block radio__block--green" for="click3"></label>
+            </div>
 
-          <button class="button" type="button" name="button">
-            <p class="button__text">Купить</p>
-          </button>
-        </form>
-        <div class="like">
-          <div class="like__icon">
-            <img class="img" src="img/heart-icon.png" alt="">
+            <button class="button" type="button" name="button">
+              <p class="button__text">Купить</p>
+            </button>
+          </form>
+          <div class="like">
+            <div class="like__icon">
+              <img class="img" src="img/heart-icon.png" alt="">
+            </div>
+            <a href="#" class="like__text">Отложить на потом</a>
           </div>
-          <a href="#" class="like__text">Отложить на потом</a>
+        </div>
+      </div>
+      <div class="tablet-strict">
+        <div class="tablet-strict__like">
+          <div class="icon">
+            <img class="icon__img" src="img/heart-icon.png" alt="">
+          </div>
+          <a href="#" class="text">Отложить на потом</a>
         </div>
       </div>
     </div>
   </div>
+
   <footer class="footer">
     <div class="footer__container">
     <div class="footer__top">
@@ -115,8 +145,8 @@
           <% for(let i = 0; i < 4; i++){%>
             <ul class="submenu">
               <% for(let j = 0; j < 4; j++){%>
-                <li class="submenu__link">
-                  <a href="#"><%=submenu[i][j]%></a>
+                <li class="submenu__item">
+                  <a class = "footer__link" href="#"><%=submenu[i][j]%></a>
                 </li>
               <%}%>
             </ul>
@@ -126,18 +156,24 @@
       <div class="additional-details">
         <ul class="additional-details__menu">
           <li class="link link--1">бесплатная доставка от 4000&#x584</li>
-          <li class="link link--2">Пробники в подарок при каждой покупке</li>
-          <li class="link link--3">Акции и подарки за покупку</li>
+          <li class="link link--2">пробники в подарок при каждой покупке</li>
+          <li class="link link--3">акции и подарки за покупку</li>
         </ul>
         <div class="additional-details__menu-icons">
           <div class="icon-link icon-link--1">
-            <a href="#"><img src="img/icons/facebook.svg" alt=""></a>
+            <a class="icon-link__facebook" href="#">
+              <img class="icon-link__img" src="img/icons/facebook.svg" alt="">
+            </a>
           </div>
-          <div class="icon-link icon-link--2"><a href="#">
-            <img src="img/icons/twitter.svg" alt=""></a>
+          <div class="icon-link icon-link--2">
+            <a class="icon-link__twitter" href="#">
+              <img class="icon-link__img" src="img/icons/twitter.svg" alt="">
+            </a>
           </div>
-          <div class="icon-link icon-link--3"><a href="#">
-            <img src="img/icons/instagram.svg" alt=""></a>
+          <div class="icon-link icon-link--3">
+            <a class="icon-link__instagram" href="#">
+              <img class="icon-link__img" src="img/icons/instagram.svg" alt="">
+            </a>
           </div>
         </div>
       </div>
@@ -153,8 +189,6 @@
     </div>
   </div>
   </footer>
-<body>
-</body>
 <script src="js/scripts.js"></script>
 </body>
 </html>
