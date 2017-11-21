@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
-
   <header class="header">
       <div class="header__container">
         <div class="header__top">
@@ -87,10 +86,13 @@
             <p class="paragraph-info">Размер:</p>
             <div class="radio" id="sizeList">
               <%const size = ['s', 'm', 'l']%>
-              <%size.forEach(function(item){%>
-                  <input type="radio" id="click" class="product-prop" data-type="size">
-                  <label class="radio__block" for="click"><%=item%></label>
+              <%size.forEach(function(item, i){%>
+                  <input type="radio" id="click<%=i%>" class="product-prop" data-type="size" data-value="<%=item%>">
+                  <label class="radio__block radio__block--<%=item%>"  for="click<%=i%>"><%=item%></label>
               <%});%>
+            </div>
+            <div class="radio" id="sizeList">
+
             </div>
 
             <p class="paragraph-info paragraph-info--padding">Цвет:</p>
@@ -155,7 +157,7 @@
       </div>
       <div class="additional-details">
         <ul class="additional-details__menu">
-          <li class="link link--1">бесплатная доставка от 4000&#x584</li>
+          <li class="link link--1">бесплатная доставка от 4000₽</li>
           <li class="link link--2">пробники в подарок при каждой покупке</li>
           <li class="link link--3">акции и подарки за покупку</li>
         </ul>
@@ -180,7 +182,7 @@
     </div>
     <div class="footer__bottom">
       <p class="info">
-        2005-2017&copy 7h35h0p.ru &#8212 модный интернет-магазин
+        2005-2017 7h35h0p.ru модный интернет-магазин
         одежды, обуви, аксессуаров.
       </p>
       <p class="info">
