@@ -47,14 +47,10 @@ function setBorder(node) {
     borderForSize.style.height = '50px';
     borderForSize.style.weight = '65px';
     selectedLi.classList.add('border');
-
 }
-let forStorage;
 function changePicture(color) {
-    forStorage = color;
     document.getElementById('productPicture').src = 'img/tshirts/tshirt_' + color + '.jpg';
     localStorage.setItem('currentColor', color);
-    return forStorage;
 }
 function changeSize(size){
     localStorage.setItem('currentSize', size);
