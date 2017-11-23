@@ -123,16 +123,9 @@ li{
     width: 50px;
     padding-left: 0;
     margin: 15px auto;
-    @media @desktop{
-        padding-left: 110px;
-    }
     @media @tablet{
-        padding-left: 30px;
+        padding-left: 90px;
         margin: 0;
-    }
-
-    &__img{
-        width: 100%;
     }
 }
 
@@ -195,7 +188,7 @@ li{
     @media @tablet{
         width: 40%;
         padding-top: 0;
-        padding-left: 40px;
+        padding-left: 70px;
     }
 
     @media @desktop{
@@ -338,9 +331,10 @@ li{
     font-family: Roboto-Regular;
     padding-top: 10px;
     @media @large{
-        margin-top: 40px;
+        margin-top: 45px;
+        width: 200px;
     }
-    @media @tablet{
+    @media @tablet-strict{
         width: 180px;
     }
 
@@ -443,7 +437,7 @@ li{
 // footer
 .footer{
     background-color: #f2f2ed;
-    margin-top: 55px;
+    margin-top: 50px;
     padding-top: 30px;
     border-top: 1px solid #d9d9d4;
 
@@ -460,12 +454,15 @@ li{
             max-width: 1600px;
             margin: 0 auto;
         }
+        @media (min-width: 1200px) and (max-width: 1400px){
+            padding: 0 60px;
+        }
     }
 
     &__top{
         width: 100%;
         //padding-bottom: 40px;
-        padding-bottom: 55px;
+        padding-bottom: 40px;
         padding-top: 15px;
         .flex();
         align-items: flex-start;
@@ -476,7 +473,7 @@ li{
 
     &__bottom{
         border-top: 1px solid #d9d9d4;
-        padding-top: 15px;
+        padding-top: 20px;
         padding-bottom: 100px;
         padding-left: 15px;
         @media @tablet-max{
@@ -491,7 +488,13 @@ li{
 }
 
 .name{
-    padding-right: 30px;
+    @media @desktop-strict{
+        padding-right: 35px;
+        margin-top: 0;
+    }
+    @media @large{
+        padding-right: 50px;
+    }
 }
 
 .menu-details{
@@ -502,6 +505,9 @@ li{
     @media @tablet-max{
         width: 100%;
         margin: 0 auto;
+    }
+    @media (min-width: 1200px) and (max-width: 1400px){
+        width: 60%;
     }
 
     &__column-names{
@@ -520,15 +526,13 @@ li{
     &__block-for-links{
         display: block;
         text-align: center;
-        font-size: 12px;
+        font-size: 16px;
         @media @tablet{
             display: flex;
             align-items: flex-start;
-            flex-wrap: wrap;
             justify-content: space-around;
             font-family: Roboto-Regular;
             text-align: inherit;
-            font-size: 16px;
         }
         @media @desktop{
             flex-wrap: nowrap;
@@ -548,11 +552,15 @@ li{
         padding-right: 10px;
     }
     @media @large{
-        padding-right: 40px;
+        padding-right: 50px;
+
+        &--padding{
+            padding-right: 0;
+        }
     }
 
     &__item{
-        line-height: 1.5;
+        line-height: 2;
     }
 }
 
@@ -562,7 +570,7 @@ li{
     font-size: 14px;
     padding-right: 10px;
     @media @tablet{
-        padding-top: 8px;
+        padding-top: 7px;
     }
 }
 
@@ -580,15 +588,22 @@ li{
 
     &__menu{
         line-height: 2.5;
-        padding-top: 15px;
+        padding-top: 20px;
         margin-top: 0;
         display: none;
         @media @tablet{
             .flex();
-            padding-left: 0;
+            padding: 0 5px;
         }
         @media @desktop{
             display: block;
+        }
+        @media @large{
+            padding-left: 40px;
+            padding-top: 20px;
+        }
+        @media (min-width: 1200px) and (max-width: 1400px){
+            padding-left: 20px;
         }
     }
 
@@ -663,6 +678,9 @@ li{
         width: 15px;
         padding-left: 10px;
         margin-top: 8px;
+        @media @desktop-strict{
+            margin-top: 0;
+        }
     }
 
     &--2{
@@ -677,7 +695,12 @@ li{
 }
 
 .link{
-    font-size: 14px;
+    @media @tablet{
+        font-size: 14px;
+    }
+    @media @large{
+        font-size: 16px;
+    }
 }
 /////// styles for js
 

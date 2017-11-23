@@ -14,13 +14,12 @@
       <div class="header__container">
         <div class="header__top">
           <div class="number">
-            <img class="number__img" src="img/the_shop_logo.svg" alt="">
+            <%- include img/the_shop_logo.svg%>
           </div>
           <div class="label">
-            <img class="label__img" src="img/oggetto_logo.svg" alt="">
+            <%- include img/oggetto_logo.svg%>
           </div>
-          <p class="contact">+7 (812) 2<span>.</span>12<span>.</span>85<span>.</span>06
-          </p>
+          <p class="contact">+7 (812) 2<span>.</span>12<span>.</span>85<span>.</span>06</p>
         </div>
         <div class="header__bottom">
           <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
@@ -87,19 +86,17 @@
             <div class="radio" id="sizeList">
               <%const size = ['s', 'm', 'l']%>
               <%size.forEach(function(item, i){%>
-                  <input type="radio" id="click<%=i%>" class="product-prop" data-type="size" data-value="<%=item%>">
-                  <label class="radio__block radio__block--<%=item%>"  for="click<%=i%>"><%=item%></label>
+                  <input type="radio" id="click-size-<%=i%>" class="product-prop" data-type="size" data-value="<%=item%>">
+                  <label class="radio__block radio__block--<%=item%>"  for="click-size-<%=i%>"><%=item%></label>
               <%});%>
             </div>
-
             <p class="paragraph-info paragraph-info--padding">Цвет:</p>
             <div class="radio js-radio" id="colorList">
-              <input type="radio" id="click3" class="product-prop" data-type="color" data-value="white">
-              <label class="radio__block radio__block--white" for="click3"></label>
-              <input type="radio" id="click4" class="product-prop" data-type="color" data-value="yellow">
-              <label class="radio__block radio__block--yellow" for="click4"></label>
-              <input type="radio" id="click5" class="product-prop" data-type="color" data-value="green">
-              <label class="radio__block radio__block--green" for="click5"></label>
+              <%const color = ['white', 'yellow', 'green']%>
+              <%color.forEach(function(item, i){%>
+                  <input type="radio" id="click-color-<%=i%>" class="product-prop" data-type="color" data-value="<%=item%>">
+                  <label class="radio__block radio__block--<%=item%>" for="click-color-<%=i%>"></label>
+              <%});%>
             </div>
 
             <button class="button" type="button" name="button">
@@ -142,7 +139,11 @@
                      ['О нас','Контакты','Вакансии','Партнерам'],
                      ['Сертификаты','Преимущества','Наши скидки','']]%>
           <% for(let i = 0; i < 4; i++){%>
-            <ul class="submenu">
+              <%if(i === 1) {%>
+                <ul class="submenu submenu--padding">
+              <%} else {%>
+                <ul class="submenu">
+              <%}%>
               <% for(let j = 0; j < 4; j++){%>
                 <li class="submenu__item">
                   <a class = "footer__link" href="#"><%=submenu[i][j]%></a>
@@ -154,26 +155,22 @@
       </div>
       <div class="additional-details">
         <ul class="additional-details__menu">
-          <li class="link link--1">бесплатная доставка от 4000₽</li>
-          <li class="link link--2">пробники в подарок при каждой покупке</li>
-          <li class="link link--3">акции и подарки за покупку</li>
+          <% const detailsMenu = ['бесплатная доставка от 4000₽',
+                                  'пробники в подарок при каждой покупке',
+                                  'акции и подарки за покупку']%>
+          <% detailsMenu.forEach(function(item, i){%>
+            <li class="link link--<%=i+1%>"><%=item%></li>
+          <%});%>
         </ul>
         <div class="additional-details__menu-icons">
-          <div class="icon-link icon-link--1">
-            <a class="icon-link__facebook" href="#">
-              <img class="icon-link__img" src="img/icons/facebook.svg" alt="">
-            </a>
-          </div>
-          <div class="icon-link icon-link--2">
-            <a class="icon-link__twitter" href="#">
-              <img class="icon-link__img" src="img/icons/twitter.svg" alt="">
-            </a>
-          </div>
-          <div class="icon-link icon-link--3">
-            <a class="icon-link__instagram" href="#">
-              <img class="icon-link__img" src="img/icons/instagram.svg" alt="">
-            </a>
-          </div>
+          <% const detailsMenuIcons = ['facebook', 'twitter', 'instagram']%>
+          <% detailsMenuIcons.forEach(function(item, i){%>
+            <div class="icon-link icon-link--<%=i+1%>">
+              <a class="icon-link__<%=item%>" href="#">
+                <img class="icon-link__img" src="img/icons/<%=item%>.svg" alt="">
+              </a>
+            </div>
+          <%});%>
         </div>
       </div>
     </div>
