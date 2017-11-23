@@ -60,9 +60,6 @@ function changeSize(size){
     localStorage.setItem('currentSize', size);
 
 }
-new PropertySelector(document.getElementById('colorList'));
-new PropertySelector(document.getElementById('sizeList'));
-
 
 if(currentColor != undefined){
     borderForColor.style.border = '4px solid #c00';
@@ -75,3 +72,6 @@ if(currentSize != undefined){
     borderForSize.style.height = '45px';
     borderForSize.style.weight = '60px';
 }
+
+new PropertySelector(document.getElementById('colorList'));
+new PropertySelector(document.getElementById('sizeList'));

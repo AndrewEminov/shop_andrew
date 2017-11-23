@@ -1,3 +1,5 @@
+/*eslint linebreak-style: ["error", "windows"]*/
+
 const gulp = require('gulp');
 const less = require('gulp-less');
 const browserSync = require('browser-sync');
@@ -8,6 +10,8 @@ const gutil        = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const gulpIf = require('gulp-if');
+const babel = require('gulp-babel');
+
 
 const env = process.env.NODE_ENV;
 
@@ -55,6 +59,9 @@ gulp.task('compress', () => {
 
 gulp.task('js', () => {
     gulp.src('src/js/**/*.*')
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(gulp.dest('./dist/js'));
 });
 
