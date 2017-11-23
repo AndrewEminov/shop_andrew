@@ -68,7 +68,6 @@ const borderForSize = document.querySelector('.radio__block--' + currentSize);
 borderForColor.style.border = '4px solid #c00';
 borderForColor.style.height = '45px';
 borderForColor.style.weight = '60px';
-
 borderForSize.style.border = '4px solid #c00';
 borderForSize.style.height = '45px';
 borderForSize.style.weight = '60px';
